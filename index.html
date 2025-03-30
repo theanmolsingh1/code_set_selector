@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .btn-codeforces {
+            background: #ff4c4c;
+            color: white;
+        }
+        .btn-leetcode {
+            background: #ff9900;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Platform</h1>
+        <div class="btn-container">
+            <button class="btn btn-codeforces" onclick="location.href='cf.html'">Codeforces</button>
+            <button class="btn btn-leetcode" onclick="location.href='leet.html'">LeetCode</button>
+        </div>
+        <h4 style="padding: 15px;">Remember: Practice makes a man perfect</h4>
+    </div>
+</body>
+</html>

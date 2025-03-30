@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces Problem Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        h4 a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        input, button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+        input {
+            width: 80%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        button {
+            background: #ff4c4c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Codeforces Problem Selector:</h1>
+        <h4><a href="https://codeforces.com/profile/theHope15"><u style="color: rgb(15, 5, 5);">Made by Anmol (theHope15).</u></a></h4>
+        <input type="number" id="minDifficulty" placeholder="Min difficulty (e.g., 800)">
+        <input type="number" id="maxDifficulty" placeholder="Max difficulty (e.g., 2000)">
+        <button onclick="generateProblem()">Get Problem Set</button>
+    </div>
+    
+    <script>
+        function generateProblem() {
+            const minDifficulty = document.getElementById("minDifficulty").value.trim();
+            const maxDifficulty = document.getElementById("maxDifficulty").value.trim();
+            
+            if (!minDifficulty || !maxDifficulty || parseInt(minDifficulty) > parseInt(maxDifficulty)) {
+                alert("Please enter a valid difficulty range.");
+                return;
+            }
+            
+            const url = `https://codeforces.com/problemset/?tags=${minDifficulty}-${maxDifficulty}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
